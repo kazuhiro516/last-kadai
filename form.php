@@ -24,8 +24,8 @@ try {
 //----------------------------------------------------
 //４．データ登録SQL作成
 //----------------------------------------------------
-$stmt = $pdo->prepare("INSERT INTO gs_kd_table(id, name, naiyou )
-VALUES(NULL, :name, :naiyou");
+$stmt = $pdo->prepare("INSERT INTO gs_kd_table(id, name, naiyou, indate )
+VALUES(NULL, :name, :naiyou, sysdate())");
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->bindValue(':naiyou', $naiyou, PDO::PARAM_STR);
 $status = $stmt->execute();
